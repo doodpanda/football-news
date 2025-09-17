@@ -73,6 +73,7 @@ def register(request):
 
     if request.method == "POST":
         form = UserCreationForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
             form.save()
             messages.success(request, 'Your account has been successfully created!')
